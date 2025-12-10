@@ -1,0 +1,157 @@
+.weather-wrapper {
+  padding: 20px;
+  text-align: center;
+}
+
+.weather-input {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.weather-input input {
+  padding: 10px;
+  width: 260px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+}
+
+.weather-input button {
+  padding: 10px 20px;
+  background: #333;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+.weather-card {
+  padding-bottom: 20px;
+  border-radius: 30px;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  animation: fadeIn 0.8s ease-in-out;
+  backdrop-filter: blur(5px);
+  background-color: #0c000028;
+}
+
+/* Backgrounds based on weather types */
+.clear {
+  background: linear-gradient(135deg, #f9d423, #ff4e50);
+  background-image: url('D:/MiniApps/src/assets/clear.jpg');
+  background-size: cover;
+  color: #ceffef;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.clouds {
+  background: linear-gradient(135deg, #757f9a, #d7dde8);
+  background-image: url('D:/MiniApps/src/assets/clouds.jpg');
+  background-size: cover;
+  color: #222222;
+  background-position: center center;
+  background-repeat: no-repeat;  
+}
+
+.rain {
+  background-color: linear-gradient(135deg, #4b79a1, #283e51);
+  background-image: url('D:/MiniApps/src/assets/rain.jpg');
+  background-size:  cover;
+  color: #ffffff;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.drizzle {
+  background-color: linear-gradient(135deg, #89f7fe, #66a6ff);
+  background-image: url('D:/MiniApps/src/assets/drizzle.jpg');
+  background-size: cover;
+  color: #ffffff;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.thunderstorm {
+  background: linear-gradient(135deg, #141e30, #243b55);
+  background-image: url('D:/MiniApps/src/assets/thunderstorm.jpg');
+  background-size: cover;
+  color: #ffffff;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.snow {
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  background-image: url('D:/MiniApps/src/assets/snow.jpg');
+  background-size: cover;
+  color: #ffffff;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.mist,
+.fog,
+.haze {
+  background: linear-gradient(135deg, #3e5151, #decba4);
+  background-image: url('D:/MiniApps/src/assets/mist.jpg');
+  background-size: cover;
+  color: #ffffff;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.weather-icon {
+  font-size: 60px;
+}
+
+.weather-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: auto;
+}
+
+.weather-details {
+  margin-top: 15px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.forecast-container {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  justify-content: center;
+}
+
+.forecast-card {
+  background-color: #0c000041;
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  padding: 10px;
+  min-width: 80px;
+  text-align: center;
+}
+
+.forecast-card p {
+  margin: 5px 0;
+}
+
+.forecast-card img {
+  width: 40px;
+}

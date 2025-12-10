@@ -1,0 +1,36 @@
+.task-app {
+  width: 350px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.task-input {
+  display: flex;
+  gap: 10px;
+}
+
+.task-list {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.task-list li.completed span {
+  text-decoration: line-through;
+  color: #777;
+}
+
+button {
+  cursor: pointer;
+}
