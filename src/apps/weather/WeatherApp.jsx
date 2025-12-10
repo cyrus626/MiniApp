@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import WeatherCard from "./WeatherCard";
 import "./weather.css";
 import Forecast from "./Forecast";
+import LoadingSpinner from "../../components/LoadingSpinner";
 
 export default function WeatherApp() {
   const [city, setCity] = useState("");
@@ -9,6 +10,8 @@ export default function WeatherApp() {
   const [forecast, setForecast] = useState(null);
   const [error, setError] = useState("");
   const [bgClass, setbgClass] = useState("clear");
+  const [loading, setLoading] = useState(true);
+
   const API_KEY = "d176452cb58b6b3d2c92d8ca3d25a5c1"
   // Detect current location on load
   useEffect(() => {
@@ -74,9 +77,11 @@ export default function WeatherApp() {
         return (index + 9) % 8 === 0;
       });
       setForecast(data)
+      setLoading(false);
     } catch {
       setError("failed to forecast");
       setForecast([]);
+      setLoading(false);
     }
   }
 
@@ -93,7 +98,7 @@ export default function WeatherApp() {
         />
         <button onClick={() => fetchWeather()}>Search</button>
       </div>
-
+      {loading? <LoadingSpinner /> : "" }
       {error && <p className="error">{error}</p>}
 
       {data && <WeatherCard info={data} />}
