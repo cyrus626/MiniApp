@@ -1,5 +1,4 @@
 import "./weather.css";
-
 export default function Forecast({ data }) {
   return (
     <div className="forecast-container">
