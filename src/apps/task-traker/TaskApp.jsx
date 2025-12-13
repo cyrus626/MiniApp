@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import TaskInput from "./TaskInput";
 import TaskList from "./TaskList";
-import "./taskStyles.css";
 
 export default function TaskApp() {
   const [tasks, setTasks] = useState([]);
@@ -34,8 +33,8 @@ export default function TaskApp() {
   };
 
   return (
-    <div className="task-app">
-      <h2>Task Tracker</h2>
+    <div className="max-w-xl mx-auto px-4 py-6">
+      <h2 className="text-2xl mb-4 font-bold text-gray-900">Task Tracker</h2>
       <TaskInput onAdd={addTask} />
       <TaskList tasks={tasks} onToggle={toggleTask} onDelete={deleteTask} />
     </div>

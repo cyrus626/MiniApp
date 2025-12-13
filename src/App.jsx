@@ -8,6 +8,7 @@ import WeatherApp from './apps/weather/WeatherApp';
 import NotesApp from './apps/notes/NotesApp';
 import ExpenseSplitter from './apps/splitter/Splitter';
 import Products from './apps/products/Products';
+import Footer from './components/Footer';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -23,6 +24,7 @@ function App() {
         <Route path="/splitter" element={<ExpenseSplitter />} />
         <Route path="/products" element={<Products/>} />
       </Routes>
+      <Footer />
     </>
   )
 }

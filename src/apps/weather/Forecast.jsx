@@ -1,4 +1,3 @@
-
 import "./weather.css";
 
 export default function Forecast({ data }) {

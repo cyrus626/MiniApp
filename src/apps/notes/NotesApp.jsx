@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Editor from "./editor";
+import Editor from "./Editor";
 import Sidebar from "./Sidebar";
 import "./notes.css";
 
