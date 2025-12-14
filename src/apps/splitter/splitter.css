@@ -1,20 +1,38 @@
-.expense-container {
-  width: 400px;
-  margin: 2rem auto;
-  padding: 20px;
-  border-radius: 10px;
-  background: #f8f8f8;
-  border: 1px solid #ddd;
-}
+@tailwind base;
 
-.expense-container h2 {
-  text-align: center;
-}
+@layer base {
+  .input-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
 
-.input-row {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 15px;
+  .result-box {
+    text-align: center;
+    padding: 15px;
+    margin-top: 10px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+
+  .add-person {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+  }
+
+  .person-list {
+    margin-top: 10px;
+  }
+
+  .summary-box {
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #ccc;
+  }
 }
 
 .input-row label {
@@ -24,15 +42,6 @@
 
 .input-row input {
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-.result-box {
-  text-align: center;
-  padding: 15px;
-  margin-top: 10px;
-  background: white;
   border: 1px solid #ccc;
   border-radius: 6px;
 }
@@ -52,12 +61,6 @@
   cursor: pointer;
 }
 
-.add-person {
-  display: flex;
-  gap: 10px;
-  margin: 20px 0;
-}
-
 .add-person input {
   flex: 1;
   padding: 10px;
@@ -74,9 +77,6 @@
   cursor: pointer;
 }
 
-.person-list {
-  margin-top: 10px;
-}
 
 .person-item {
   display: flex;
@@ -93,14 +93,6 @@
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
-}
-
-.summary-box {
-  margin-top: 25px;
-  padding: 15px;
-  border-radius: 8px;
-  background: #fff;
-  border: 1px solid #ccc;
 }
 
 .summary-box h3 {

@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import Editor from "./Editor";
 import Sidebar from "./Sidebar";
-import "./notes.css";
+import "../../index.css";
 
 export default function NotesApp() {
   const [notes, setNotes] = useState([]);
   const [current, setCurrent] = useState(null);
   const [search, setSearch] = useState("");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   // Load from localStorage
   useEffect(() => {
@@ -47,14 +48,33 @@ export default function NotesApp() {
   );
 
   return (
-    <div className="notes-container">
+    <div className="flex overflow-hidden h-screen">
       <Sidebar
         notes={filteredNotes}
         setCurrent={setCurrent}
         addNote={addNote}
         search={search}
         setSearch={setSearch}
+        sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
       />
+      <button
+        onClick={() => setSidebarOpen(true)}
+        className="md:hidden mb-3 px-4 
+        bg-gray-800 text-white rounded-lg">
+        ☰ Notes
+      </button>
+      {sidebarOpen && (
+        <div
+          onClick={() => setSidebarOpen(false)}
+          className="
+            fixed inset-0
+            bg-black/40
+            z-30
+            md:hidden
+          "
+        />
+      )}
 
       <Editor
         current={current}

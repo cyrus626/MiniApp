@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./notes.css";
+import "../../index.css";
 
 function Editor({ current, updateNote, deleteNote }) {
   const [title, setTitle] = useState("");
@@ -35,23 +35,26 @@ function Editor({ current, updateNote, deleteNote }) {
   }
 
   return (
-    <div className="editor">
+    <div className="flex flex-col px-4 mb-2 flex-1 overflow-y-auto">
       <input
-        className="title-input"
+        className="font-semibold text-2xl my-3 pb-3 border-b-2
+          border-gray-300"
         placeholder="Title..."
         value={title}
         onChange={handleTitleChange}
       />
 
       <textarea
-        className="body-input"
+        className="flex-1 resize-none p-5 border 
+          border-gray-300 rounded-lg focus:outline-none text-lg"
         placeholder="Write your note..."
         value={body}
         onChange={handleBodyChange}
       />
 
       <button
-        className="delete-btn"
+        className="cursor-pointer mt-3 bg-red-600 p-3 rounded-lg
+          font-bold text-lg"
         onClick={() => deleteNote(current.id)}>
         Delete Note
       </button>

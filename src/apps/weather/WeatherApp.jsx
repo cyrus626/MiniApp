@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import WeatherCard from "./WeatherCard";
-import "./weather.css";
+import "../../index.css";
 import Forecast from "./Forecast";
 import LoadingSpinner from "../../components/LoadingSpinner";
 
@@ -86,17 +86,28 @@ export default function WeatherApp() {
   }
 
   return (
-    <div className={`weather-wrapper ${bgClass}`}>
-      <h2>Weather App</h2>
+    <div className={`px-4 py-6  mx-auto ${bgClass}`}>
+      <h2 className="text-2xl font-bold mb-4 text-center">Weather App</h2>
 
-      <div className="weather-input">
-        <input
+      <div className="flex flex-col gap-3
+      sm:flex-row sm:items:center sm:justify-center
+      mb-4">
+        <input className="w-full sm:w-72
+          px-4 py-2
+          border border-gray-300
+          rounded-lg
+          focus:outline-none
+          focus:ring-2 focus:ring-sky-400
+        "
           type="text"
           placeholder="Search city..."
           value={city}
           onChange={(e) => setCity(e.target.value)}
         />
-        <button onClick={() => fetchWeather()}>Search</button>
+        <button className="px-4 py-1
+        border border-gray-200
+        rounded-lg bg-gray-600 text-white
+        hover:bg-gray-700 transition" onClick={() => fetchWeather()}>Search</button>
       </div>
       {loading? <LoadingSpinner /> : "" }
       {error && <p className="error">{error}</p>}

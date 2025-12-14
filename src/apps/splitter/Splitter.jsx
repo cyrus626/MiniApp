@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./splitter.css";
+import "../../index.css";
 
 export default function ExpenseSplitter() {
   const [amount, setAmount] = useState("");
@@ -97,8 +98,9 @@ export default function ExpenseSplitter() {
     setPersonName("");
   }
   return (
-    <div className="expense-container">
-      <h2>Expense Splitter</h2>
+    <div className="min-h-screen justify-center bg-gray-100 p-7 m-7
+      border border-gray-300 rounded-xl">
+      <h2 className="text-center font-bold text-2xl">Expense Splitter</h2>
 
       <div className="input-row">
         <label>Total Amount</label>

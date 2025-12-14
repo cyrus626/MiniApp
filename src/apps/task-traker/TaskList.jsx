@@ -1,3 +1,5 @@
+import "../../index.css";
+
 export default function TaskList({ tasks, onToggle, onDelete }) {
   return (
     <ul className="space-y-3">

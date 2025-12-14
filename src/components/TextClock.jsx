@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 function timeToText() {
     const now = new Date();
     let hours = now.getHours();
@@ -14,15 +15,24 @@ function timeToText() {
     const minutesText = minutes === 0
         ? "O'CLOCK" : // at 0 minutes it should return o'clock
         minutes < 10
-            ? `O ${numbers[minutes]}` // less than ten return O minutes 
+            ? `OH ${numbers[minutes]}` // less than ten return O minutes 
             : numbers[minutes];
 
-    if (minutes === 0 && hours === 12) return `TWELVE NOON`;
-    if (minutes === 15) return `QUARTER PAST ${hoursText} ${periods}`;
-    if (minutes === 30) return `HALF PAST ${hoursText} ${periods}`;
-    if (minutes === 45) return `QUARTER TO ${numbers[(hours % 12) + 1]} ${periods}`;
-    return `${hoursText} ${minutesText} ${periods}`
+    let time = [];
+    if (minutes === 0 && hours === 12) {
+        time = { bigText: "TWELVE NOON", smallText: "", period: "" };
+    } else if (minutes === 15) {
+        time = { bigText: "QUARTER PAST", smallText: hoursText, period: periods };
+    } else if (minutes === 30) {
+        time = { bigText: "HALF PAST", smallText: hoursText, period: periods };
+    } else if (minutes === 45) {
+        time = { bigText: `QUARTER TO ${numbers[(hours % 12) + 1]}`, smallText: "", period: periods };
+    } else {
+        time = { bigText: hoursText, smallText: minutesText, period: periods };
+    }
+    return time;
 }
+
 const numbers = [
     "TWELVE", "ONE", "TWO", "THREE", "FOUR", "FIVE",
     "SIX", "SEVEN", "EIGHT", "NINE", "TEN", "ELEVEN",
@@ -50,13 +60,16 @@ function TextClock() {
     }, [])
 
     return (
-        <div key={time} className="w-full mb-8 flex justify-center animate-fadeSlide">
-            <div  className="px-6 py-4  rounded-xl 
+        <div key={time.bigText} className="w-full mb-8 flex justify-center animate-fadeSlide">
+            <div className="px-6 py-4  rounded-xl 
                 bg-gradient-to-br from-gray-50 to-gray-100
                 border border-gray-200
-                shadown-sm text-center">
-                <h1 className="text-lg sm:text-xl lg:text-2xl
-                    font-semibold tracking-wide text-gray-800">{time}</h1>
+                shadown-sm text-center flex gap-2 flex-row items-end justify-center">
+                <div>
+                    <p className="text-4xl font-semibold">{time.bigText}</p>
+                    <p className="font-semibold text-lg">{time.smallText}</p>
+                </div>
+                <p >{time.period}</p>
             </div>
         </div>
     )
