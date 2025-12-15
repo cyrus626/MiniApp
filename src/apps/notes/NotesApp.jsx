@@ -62,7 +62,7 @@ export default function NotesApp() {
         onClick={() => setSidebarOpen(true)}
         className="md:hidden mb-3 px-4 
         bg-gray-800 text-white rounded-lg">
-        ☰ Notes
+        |||
       </button>
       {sidebarOpen && (
         <div

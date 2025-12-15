@@ -14,11 +14,12 @@ export default function Navbar() {
           ☰
         </button>
         <ul className="hidden md:flex gap-6 font-semibold">
-          <li className="hover:text-gray-300 cursor-pointer">Home</li>
-          <li className="hover:text-gray-300 cursor-pointer">Weather</li>
-          <li className="hover:text-gray-300 cursor-pointer">Notes</li>
-          <li className="hover:text-gray-300 cursor-pointer">Expenses</li>
-          <li className="hover:text-gray-300 cursor-pointer">Products</li>
+          <li className="hover:text-gray-300 cursor-pointer"><Link to="/">Home</Link></li>
+          <li className="hover:text-gray-300 cursor-pointer"><Link to="/tasks">Task Manager</Link></li>
+          <li className="hover:text-gray-300 cursor-pointer"><Link to="/weather">Weather</Link></li>
+          <li className="hover:text-gray-300 cursor-pointer"><Link to="/notes" >Notes</Link></li>
+          <li className="hover:text-gray-300 cursor-pointer"><Link to="/splitter">Expenses Splitter</Link></li>
+          <li className="hover:text-gray-300 cursor-pointer"><Link to="/products">Products</Link></li>
         </ul>
       </div>
 

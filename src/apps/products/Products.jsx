@@ -27,20 +27,7 @@ function Products() {
         loadData();
         setLoading(false);
     }, [])
-    // Display: image, title, price, rating
-
-    // Filter by category
-    // const filteredItems = [{title:"Item 1", imgage:"", price:"5", rating:4.5 },
-    //     {title:"Item 1", imgage:"", price:"5", rating: 4.5 },
-    //     {title:"Item 1", imgage:"", price:"5", rating: 4.5 },
-    //     {title:"Item 1", imgage:"", price:"5", rating: 4.5 },
-    //     {title:"Item 1", imgage:"", price:"5", rating: 4.5 },
-    //     {title:"Item 1", imgage:"", price:"5", rating: 4.5 },
-    //     {title:"Item 1", imgage:"", price:"5", rating: 4.5 },
-    //     {title:"Item 1", imgage:"", price:"5", rating: 4.5 },
-    //     {title:"Item 1", imgage:"", price:"5", rating: 4.5 },
-    //     {title:"Item 1", imgage:"", price:"5", rating: 4.5 }
-    // ];
+    
     const filteredItems = items.filter(item => {
          const matchesSearch = search
              ? item.title.toLowerCase().includes(search.toLowerCase())
@@ -96,8 +83,7 @@ function Products() {
                             </div>
                             <div className="p-3 space-y-1">
                                 <p className="text-base font-semibold text-gray-900">${item.price}</p>
-                                <p className="">{item.rating}</p>
-                                {/* <p className="">{item.rating.rate}</p> */}
+                                <p className="product-rating">{item.rating.rate}</p>
                                 <button className="mt-2 w-full py-2
                                     rounded-xl bg-gray-900 text-white
                                     text-sm font-medium active:scale-95
